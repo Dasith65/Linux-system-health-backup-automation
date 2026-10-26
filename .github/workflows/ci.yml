@@ -1,0 +1,20 @@
+name: My First CI Pipeline
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  basic-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run first test
+        run: |
+          echo "Hello from Dasith's CI Pipeline!"
+          echo "CI workflow is running successfully."
+          test -f README.md
+          echo "README.md exists. Test passed!"
