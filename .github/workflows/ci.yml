@@ -15,7 +15,7 @@ jobs:
       - name: Check README file
         run: |
           echo "Checking README.md..."
-          test -f file-does-not-exist.txt
+          test -f README.md
           echo "README.md exists. Test passed!"
 
   bash-check:
