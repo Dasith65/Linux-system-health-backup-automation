@@ -12,9 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run first test
+      - name: Check README file
         run: |
           echo "Hello from Dasith's CI Pipeline!"
-          echo "CI workflow is running successfully."
           test -f README.md
           echo "README.md exists. Test passed!"
+
+      - name: Check Bash script syntax
+        run: |
+          bash -n system-health-backup.sh
+          echo "Bash syntax check passed!"
