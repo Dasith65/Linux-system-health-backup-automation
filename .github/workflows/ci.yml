@@ -14,9 +14,17 @@ jobs:
 
       - name: Check README file
         run: |
-          echo "Hello from Dasith's CI Pipeline!"
+          echo "Checking README.md..."
           test -f README.md
           echo "README.md exists. Test passed!"
+
+  bash-check:
+    needs: basic-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Check Bash script syntax
         run: |
