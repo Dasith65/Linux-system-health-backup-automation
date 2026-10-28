@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Display application name
-         run: echo "Application: $APP_NAME"
+        run: 'echo "Application: $APP_NAME"'
 
       - name: Check README file
         run: |
