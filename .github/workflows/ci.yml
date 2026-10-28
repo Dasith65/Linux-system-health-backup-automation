@@ -1,5 +1,8 @@
 name: My First CI Pipeline
 
+env:
+  APP_NAME: "Dasith-CI-project"
+
 on:
   push:
   workflow_dispatch:
@@ -11,6 +14,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Display application name
+         run: echo "Application: $APP_NAME"
 
       - name: Check README file
         run: |
