@@ -18,6 +18,10 @@ jobs:
       - name: Display application name
         run: 'echo "Application: $APP_NAME"'
 
+      - name: Run only if previous step succeeds
+        if: success()
+        run: echo "previous step succeeded!"
+
       - name: Check README file
         run: |
           echo "Checking README.md..."
