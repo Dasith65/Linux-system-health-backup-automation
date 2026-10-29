@@ -17,7 +17,7 @@ jobs:
 
       - name: Display application name
         run: 'echo "Application: $APP_NAME"'
-
+    
       - name: Run only if previous step succeeds
         if: success()
         run: echo "previous step succeeded!"
@@ -26,8 +26,14 @@ jobs:
         run: |
           echo "Checking README.md..."
           test -f README.md
-          echo "README.md exists. Test passed!"
- 
+          echo "README.md exists. Test passed!" 
+          
+      - name: Test required file
+        run: |
+          echo "Checking required file..."
+          test -f README.md
+          echo "Required file test passed!"
+          
       - name: Create CI report
         run: |
           echo "CI Pipeline Report" > ci-report.txt 
