@@ -27,6 +27,12 @@ jobs:
           echo "Checking README.md..."
           test -f README.md
           echo "README.md exists. Test passed!"
+            
+      - name: Create CI report
+        run: 
+          echo "CI Pipeline Report" > ci-report.txt 
+          echo "Application: $APP_NAME" >> ci-report.txt
+          echo "Branch: $GITHUB_REF_NAME" >> ci-report.txt cat ci-report.txt
 
   bash-check:
     needs: basic-test
