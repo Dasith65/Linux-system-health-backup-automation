@@ -47,16 +47,6 @@ jobs:
            name: ci-report
            path: ci-report.txt
 
-
-      - name: Temporary failure test
-        run: |
-          echo "Testing failure handling..."
-          exit 1
-
-      - name: Verify always condition
-        if: always()
-        run: echo "Final verification step executed!"     
-
   bash-check:
     needs: basic-test
     runs-on: ubuntu-latest
