@@ -38,8 +38,8 @@ jobs:
        - name: Upload CI report artifact
          uses: actions/upload-artifact@v4
          with:
-          name: ci-report
-          path: ci-report.txt
+           name: ci-report
+           path: ci-report.txt
 
   bash-check:
     needs: basic-test
