@@ -35,6 +35,12 @@ jobs:
           echo "Branch: $GITHUB_REF_NAME" >> ci-report.txt
           cat ci-report.txt
 
+       - name: Upload CI report artifact
+         uses: actions/upload-artifact@v4
+         with:
+          name: ci-report
+          path: ci-report.txt
+
   bash-check:
     needs: basic-test
     runs-on: ubuntu-latest
